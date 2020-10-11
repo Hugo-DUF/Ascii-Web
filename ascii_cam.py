@@ -1,8 +1,6 @@
 from cv2 import cv2
 import numpy as np
 import socketio
-import json
-import requests
 
 sio = socketio.Client()
 sio.connect('http://localhost:3000')
@@ -42,7 +40,6 @@ def toASCII(frame, cols = 183, rows = 54):
             )
             result += grayToChar(gray)
         result += '\n'
-    # x = requests.post('http://localhost:3000', data = { "jsonData": result } )
     sio.emit('message', result)
 
     return result
