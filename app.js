@@ -1,5 +1,4 @@
 const express = require('express')
-const fs = require('file-system')
 const app = express()
 
 const server = app.listen(3000);
